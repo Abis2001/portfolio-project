@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+        JOB_NAME = env.JOB_NAME
+        BUILD_NUMBER = env.BUILD_NUMBER
+    }
 
     stages {
         stage('Git Clone') {
@@ -33,18 +38,32 @@ pipeline {
                 }
         }
         stage('Docker Login') {
-    steps {
-        withCredentials([
-            usernamePassword(
+            steps {
+                withCredentials([
+                 usernamePassword(
                 credentialsId: 'dockerhub-credentials',
                 usernameVariable: 'DOCKER_USERNAME',
                 passwordVariable: 'DOCKER_PASSWORD'
             )
         ]) {
-            sh '''
+                sh '''
                 echo "$DOCKER_PASSWORD" | docker login \
                 -u "$DOCKER_USERNAME" \
                 --password-stdin
+                '''
+        }
+    }
+}
+        stage('Push to DockerHub') {
+    steps {
+        withCredentials([usernamePassword(
+            credentialsId: 'dockerhub-credentials',
+            usernameVariable: 'DOCKER_USERNAME',
+            passwordVariable: 'DOCKER_PASSWORD'
+        )]) {
+            sh '''
+                docker tag abishek-portfolio:v1 $DOCKER_USERNAME/portfolio:v1
+                docker push $DOCKER_USERNAME/portfolio:v1
             '''
         }
     }
