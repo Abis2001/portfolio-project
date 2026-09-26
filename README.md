@@ -1,4 +1,4 @@
-# 🚀 Abishek Baskaran — DevOps Portfolio
+# 🚀 Abishek Baskaran —  Portfolio
 
 A personal portfolio website built with **HTML, CSS, Docker, and Nginx**, with a CI/CD pipeline using **Jenkins and GitHub**.
 
@@ -34,7 +34,7 @@ http://localhost:8099
 
 ## 📁 Project Structure
 
-```text
+text
 portfolio-project/
 │
 ├── index.html
@@ -46,8 +46,6 @@ portfolio-project/
 
 The main objective of this project is to demonstrate a simple DevOps workflow:
 
-```
-text
 Code
  ↓
 Git
@@ -61,7 +59,9 @@ Docker
 Nginx
  ↓
 Application
-```
+
+For the code : https://github.com/Abis2001/portfolio-project/tree/master
+
 
 📫 Connect With Me
 
