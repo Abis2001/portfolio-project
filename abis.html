@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abishek Baskaran | Cloud & DevOps Engineer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: #0f172a;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #f8fafc;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 100px 8% 50px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            color: #94a3b8;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #cbd5e1;
+            max-width: 700px;
+            margin: auto;
+            font-size: 18px;
+        }
+
+        .buttons {
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 8px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .secondary {
+            border: 1px solid #38bdf8;
+            color: #38bdf8;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 90px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            margin-bottom: 50px;
+        }
+
+        .section-title span {
+            color: #38bdf8;
+        }
+
+        /* ABOUT */
+
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #cbd5e1;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        /* SKILLS */
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: #1e293b;
+            padding: 25px;
+            text-align: center;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            background: #263449;
+        }
+
+        .skill h3 {
+            color: #38bdf8;
+        }
+
+        /* PROJECTS */
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project {
+            background: #1e293b;
+            padding: 30px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+        }
+
+        .project h3 {
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .project p {
+            color: #cbd5e1;
+        }
+
+        /* EXPERIENCE */
+
+        .experience {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .experience-card {
+            background: #1e293b;
+            padding: 30px;
+            border-left: 4px solid #38bdf8;
+            border-radius: 8px;
+        }
+
+        .experience-card h3 {
+            color: #38bdf8;
+        }
+
+        .experience-card p {
+            color: #cbd5e1;
+        }
+
+        /* EDUCATION */
+
+        .education {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .education-card {
+            background: #1e293b;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .education-card h3 {
+            color: #38bdf8;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #cbd5e1;
+            margin-bottom: 15px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #020617;
+            color: #94a3b8;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 768px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 22px;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .section-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav>
+        <div class="logo">Abishek</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Hi, I'm <span>Abishek</span></h1>
+
+            <h2>Cloud & DevOps Engineer</h2>
+
+            <p>
+                I build and automate cloud infrastructure using AWS,
+                Terraform, Docker, Jenkins, Kubernetes, Linux and Python.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View Projects
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+        <h2 class="section-title">
+            About <span>Me</span>
+        </h2>
+
+        <div class="about">
+
+            <p>
+                Hi, I'm <strong>Abishek Baskaran</strong>, a passionate
+                and aspiring Cloud & DevOps Engineer with a Master's
+                degree in Computer Applications (MCA).
+            </p>
+
+            <p>
+                I have a strong interest in cloud computing,
+                infrastructure automation and DevOps practices.
+                I have hands-on knowledge of AWS, Linux, Git,
+                Docker, Kubernetes, Terraform, Jenkins and Python.
+            </p>
+
+            <p>
+                I enjoy building automated infrastructure,
+                creating CI/CD pipelines and learning how modern
+                applications are deployed and managed in cloud
+                environments.
+            </p>
+
+            <p>
+                My goal is to grow as a Cloud/DevOps Engineer and
+                build reliable, scalable and automated cloud
+                infrastructure.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+
+    <section id="skills">
+
+        <h2 class="section-title">
+            Technical <span>Skills</span>
+        </h2>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                <h3>AWS</h3>
+                <p>EC2, S3, IAM, EBS, NLB</p>
+            </div>
+
+            <div class="skill">
+                <h3>Linux</h3>
+                <p>Ubuntu, Shell Commands, System Administration</p>
+            </div>
+
+            <div class="skill">
+                <h3>Docker</h3>
+                <p>Containers, Images, Volumes, Networking</p>
+            </div>
+
+            <div class="skill">
+                <h3>Kubernetes</h3>
+                <p>Pods, Deployments, Services</p>
+            </div>
+
+            <div class="skill">
+                <h3>Terraform</h3>
+                <p>Infrastructure as Code</p>
+            </div>
+
+            <div class="skill">
+                <h3>Jenkins</h3>
+                <p>CI/CD Pipeline Automation</p>
+            </div>
+
+            <div class="skill">
+                <h3>Git</h3>
+                <p>Git & GitHub</p>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>Automation & Scripting</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+
+    <section id="projects">
+
+        <h2 class="section-title">
+            My <span>Projects</span>
+        </h2>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>Infrastructure Pipeline</h3>
+
+                <p>
+                    Automated AWS infrastructure deployment using
+                    Terraform, Jenkins and Git. The project demonstrates
+                    Infrastructure as Code and CI/CD automation.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>AWS Infrastructure</h3>
+
+                <p>
+                    Created and managed AWS resources including EC2,
+                    S3, IAM and networking components using cloud
+                    infrastructure practices.
+                </p>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Docker Application</h3>
+
+                <p>
+                    Containerized applications using Docker and
+                    practiced container networking, port mapping,
+                    volumes and Docker lifecycle management.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+
+        <h2 class="section-title">
+            Work <span>Experience</span>
+        </h2>
+
+        <div class="experience">
+
+            <div class="experience-card">
+
+                <h3>Relationship Manager 2</h3>
+
+                <h4>City Union Bank | 2023 - 2025</h4>
+
+                <br>
+
+                <p>
+                    Worked as a Relationship Manager and gained
+                    professional experience in customer relationship
+                    management, banking operations and business
+                    processes.
+                </p>
+
+                <p>
+                    Currently transitioning my career toward
+                    Cloud Computing and DevOps, with a focus on
+                    AWS, Linux, Terraform, Jenkins, Docker,
+                    Kubernetes and Python.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+        <h2 class="section-title">
+            <span>Education</span>
+        </h2>
+
+        <div class="education">
+
+            <div class="education-card">
+
+                <h3>Master of Computer Applications (MCA)</h3>
+
+                <p>
+                    Kumaraguru College of Technology, Coimbatore
+                </p>
+
+                <p>2021 - 2023</p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <h3>B.Sc Information Technology</h3>
+
+                <p>
+                    Swami Dayanandha College of Arts and Science,
+                    Manjakudi
+                </p>
+
+                <p>2018 - 2021</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact">
+
+        <h2 class="section-title">
+            Contact <span>Me</span>
+        </h2>
+
+        <div class="contact">
+
+            <p>
+                I'm open to opportunities in Cloud and DevOps.
+            </p>
+
+            <a href="mailto:your-email@example.com"
+               class="btn primary">
+                Email Me
+            </a>
+
+            <a href="https://github.com/"
+               target="_blank"
+               class="btn secondary">
+                GitHub
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+            abishekbaskar23@gmail.com. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+</html>
