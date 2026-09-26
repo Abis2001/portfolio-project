@@ -6,6 +6,7 @@ pipeline {
         IMAGE_NAME = 'abishek-portfolio'
         IMAGE_TAG = 'v1'
         DOCKER_REPO = 'your-username/portfolio'
+        BUILD_NUMBER = "${env.BUILD_NUMBER}"
     }
 
     stages {
