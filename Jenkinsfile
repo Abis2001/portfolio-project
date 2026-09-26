@@ -2,8 +2,10 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
-        JOB_NAME = env.JOB_NAME
-        BUILD_NUMBER = env.BUILD_NUMBER
+        DOCKERUSERNAME = "${DOCKERHUB_CREDENTIALS_USR}"
+        IMAGE_NAME = 'abishek-portfolio'
+        IMAGE_TAG = 'v1'
+        DOCKER_REPO = 'your-username/portfolio'
     }
 
     stages {
